@@ -14,7 +14,7 @@
     "build": {
         "appId": "com.somya.svaratv",
         "productName": "SvaraTV",
-        "icon": "src/icon.png",
+        "icon": "icon.png",
         "nsis": {
             "oneClick": true,
             "perMachine": false,
@@ -22,7 +22,7 @@
         },
         "win": {
             "target": "nsis",
-            "icon": "src/icon.png"
+            "icon": "icon.png"
         }
     },
     "dependencies": {

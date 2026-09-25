@@ -22,7 +22,7 @@ function createWindow () {
     width: 1280,
     height: 850,
     autoHideMenuBar: true, // Makes it look like a sleek native app
-    icon: path.join(__dirname, 'src', 'icon.png'),
+    icon: path.join(__dirname, 'icon.png'),
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
@@ -30,7 +30,7 @@ function createWindow () {
     }
   });
 
-  mainWindow.loadFile('src/live-tv.html');
+  mainWindow.loadFile('live-tv.html');
 }
 
 app.whenReady().then(() => {
