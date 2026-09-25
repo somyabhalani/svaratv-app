@@ -1,0 +1,34 @@
+{
+    "name": "svaratv",
+    "version": "1.0.0",
+    "description": "SvaraTV Native Windows Player",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "build": "electron-builder --win"
+    },
+    "devDependencies": {
+        "electron": "^34.5.8",
+        "electron-builder": "^25.1.8"
+    },
+    "build": {
+        "appId": "com.somya.svaratv",
+        "productName": "SvaraTV",
+        "icon": "icon.png",
+        "nsis": {
+            "oneClick": true,
+            "perMachine": false,
+            "allowToChangeInstallationDirectory": false
+        },
+        "win": {
+            "target": "nsis",
+            "icon": "icon.png"
+        }
+    },
+    "dependencies": {
+        "@capacitor/android": "^8.5.2",
+        "@capacitor/cli": "^8.5.2",
+        "@capacitor/core": "^8.5.2",
+        "electron-winstaller": "^5.4.4"
+    }
+}
