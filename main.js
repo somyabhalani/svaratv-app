@@ -3,6 +3,8 @@ const path = require('path');
 const fs = require('fs');
 const https = require('https');
 
+if (require('electron-squirrel-startup')) app.quit();
+
 const M3U_URL = 'https://raw.githubusercontent.com/drmlive/fancode-live-events/main/fancode.m3u';
 const LOCAL_FILE = path.join(__dirname, 'fancode.m3u');
 

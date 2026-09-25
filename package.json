@@ -29,6 +29,7 @@
         "@capacitor/android": "^8.5.2",
         "@capacitor/cli": "^8.5.2",
         "@capacitor/core": "^8.5.2",
+        "electron-squirrel-startup": "^1.0.1",
         "electron-winstaller": "^5.4.4"
     }
 }

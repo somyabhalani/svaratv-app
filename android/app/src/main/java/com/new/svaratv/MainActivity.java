@@ -1,4 +1,4 @@
-package com.somya.svaratv;
+package com.new.svaratv;
 
 import com.getcapacitor.BridgeActivity;
 
