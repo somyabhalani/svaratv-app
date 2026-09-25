@@ -80,22 +80,23 @@
         const channelSelect = document.getElementById('channel-select');
         let channelsData = [];
 
-        const fs = require('fs');
-        const path = require('path');
-
-        function loadLocalPlaylist() {
-            const localFile = path.join(__dirname, 'fancode.m3u');
-            if (fs.existsSync(localFile)) {
-                const data = fs.readFileSync(localFile, 'utf8');
-                parseM3U(data);
-            } else {
+        async function fetchFanCodePlaylist() {
+            try {
                 channelSelect.innerHTML = `<option value="">Downloading playlist...</option>`;
-                setTimeout(loadLocalPlaylist, 1000); // Check again in 1 second
+                const response = await fetch('https://raw.githubusercontent.com/drmlive/fancode-live-events/main/fancode.m3u');
+                if (response.ok) {
+                    const data = await response.text();
+                    parseM3U(data);
+                } else {
+                    channelSelect.innerHTML = `<option value="">Failed to download playlist</option>`;
+                }
+            } catch (err) {
+                console.error(err);
+                channelSelect.innerHTML = `<option value="">Error fetching playlist</option>`;
             }
         }
         
-        // Start trying to load the local file
-        loadLocalPlaylist();
+        fetchFanCodePlaylist();
 
         function parseM3U(text) {
             const lines = text.split('\n');
