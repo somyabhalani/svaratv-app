@@ -1,7 +1,7 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.new.svaratv',
+  appId: 'com.app.svaratv',
   appName: 'SvaraTV',
   webDir: 'src'
 };

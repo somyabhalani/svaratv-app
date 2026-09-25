@@ -3,21 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const https = require('https');
 
-if (require('electron-squirrel-startup')) app.quit();
-
-const M3U_URL = 'https://raw.githubusercontent.com/drmlive/fancode-live-events/main/fancode.m3u';
-const LOCAL_FILE = path.join(__dirname, 'fancode.m3u');
-
-function downloadPlaylist() {
-  https.get(M3U_URL, (res) => {
-    const file = fs.createWriteStream(LOCAL_FILE);
-    res.pipe(file);
-  }).on('error', (err) => console.error(err));
-}
-
-// Download instantly on boot, then every 5 minutes
-downloadPlaylist();
-setInterval(downloadPlaylist, 5 * 60 * 1000);
+if (require('electron-squirrel-startup')) return app.quit();
 
 function createWindow () {
   const mainWindow = new BrowserWindow({

@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace = "com.somya.svaratv"
-    compileSdk = rootProject.ext.compileSdkVersion
+    namespace = "com.new.svaratv"
+    compileSdk = 35
     defaultConfig {
-        applicationId "com.somya.svaratv"
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        applicationId "com.new.svaratv"
+        minSdkVersion 24
+        targetSdkVersion 35
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
